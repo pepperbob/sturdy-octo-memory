@@ -1,0 +1,8 @@
+{
+    "endpoints": [
+        "https://httpbin.org/uuid", 
+        "https://httpbin.org/ip", 
+        "https://httpbin.org/headers",
+        "https://httpbin.org/json"
+    ]
+}
