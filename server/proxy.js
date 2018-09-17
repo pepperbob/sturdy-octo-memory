@@ -25,11 +25,14 @@ const proxy = (tasks, fn) => (req, resp) => {
 }
 
 const startServer = listener => {
-    console.log('node.js application starting...');
-    var svr = http.createServer(listener);
-    svr.listen(9000, function() {
-        console.log('Node HTTP server is listening');
-    });
+    return new Promise((res, rej) => {
+        console.log('node.js application starting...');
+        var svr = http.createServer(listener);
+        svr.listen(9000, function() {
+            console.log('Node HTTP server is listening');
+            res();
+        });
+    })
 }
 
 module.exports = {

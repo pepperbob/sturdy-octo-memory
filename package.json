@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.1",
+    "karma": "^3.0.0",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@pact-foundation/karma-pact": "^2.1.8",
+    "@pact-foundation/pact": "^5.9.1",
+    "@pact-foundation/pact-node": "^6.19.11",
+    "jasmine": "^3.2.0"
   }
 }
