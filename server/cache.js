@@ -20,10 +20,6 @@ class Cache {
         });
     }
 
-    del(keys) {
-        this.cache.del(keys);
-    }
-
     flush() {
         this.cache.flushAll();
     }
