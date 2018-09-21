@@ -11,7 +11,9 @@
   "dependencies": {
     "async": "^2.6.1",
     "karma": "^3.0.0",
-    "request": "^2.88.0"
+    "node-cache": "^4.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "@pact-foundation/karma-pact": "^2.1.8",

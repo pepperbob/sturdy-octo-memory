@@ -1,6 +1,6 @@
-const {startServer, proxy, tasks} = require('./proxy');
+const {startServer, executeTasksListener, requestsForUrls} = require('./proxy');
 const {combine} = require('./reducer')
 
 module.exports = {
-    app: urls => startServer(proxy(tasks(urls), combine))
+    app: urls => startServer(executeTasksListener(requestsForUrls(urls), combine))
 }

@@ -5,11 +5,11 @@ const { app } = require('../server/app')
 
 const MOCK_SERVER_PORT = 2202;
 
-describe('Aufgaben', () => {
+describe('Requested stuf', () => {
 
     const provider = new Pact({
-        consumer: "aufgaben",
-        provider: "administrator-aufgaben",
+        consumer: "stuff",
+        provider: "stuff-keeper",
         port: MOCK_SERVER_PORT,
         log: path.resolve(process.cwd(), "logs", "pact.log"),
         dir: path.resolve(process.cwd(), "pacts"),
@@ -27,11 +27,11 @@ describe('Aufgaben', () => {
         provider.setup()
             .then(() =>
                 provider.addInteraction({
-                    state: "Eine Liste von Aufgaben",
-                    uponReceiving: "Abruf der Aufgaben für Isabell",
+                    state: "List of Stuff",
+                    uponReceiving: "Request for that List of Stuff",
                     withRequest: {
                         method: "GET",
-                        path: "/aufgaben",
+                        path: "/stuff",
                         headers: { Accept: "application/json" }
                     },
                     willRespondWith: {
@@ -42,9 +42,9 @@ describe('Aufgaben', () => {
                 }))
             .then(done));
 
-    it('werden abgerufen', done => {
+    it('will be returned', done => {
 
-        app(['http://localhost:2202/aufgaben']).then(() => {
+        app(['http://localhost:2202/stuff']).then(() => {
 
             request({
                 url: "http://localhost:9000/",
